@@ -1,0 +1,15 @@
+*_files/
+main.*
+.main.*
+*.aux
+*.bcf
+*.cb
+*.cb2
+*.fls
+*.log
+*.out
+*.pdf
+*.pdf_tex
+*.run.xml
+*.toc
+svg_inkscape

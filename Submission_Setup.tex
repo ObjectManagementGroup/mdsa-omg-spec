@@ -1,0 +1,190 @@
+%%% This file is for setting the data used in the template
+%%% It is intended that this file will be automatically generated in the future
+%%%%%%%  DO NOT ADD ANYTHING ELSE TO THIS FILE
+%%%%%%%  Use Submission_AuthorSettings.tex for any additional features you wish to add
+
+%%%---------------------------------
+%%% INSTRUCTIONS
+%%% The default submission document will be filled in with instructions in red italics
+%%% when you first render it.  Feel free to print and refer to this initial version.
+%%% Completing the setup in this file will remove the instructions and insert your
+%%% technical content, which, initially, much will be blank.
+
+%%% For each instance of {\REPLACEME{X}} in this file, substitute the appropriate
+%%% information.  For instance:
+%%% \setvalue{\specname}{\REPLACEME{Test Specification}}
+%%% ->
+%%% \setvalue{\specname}{Unified Modeling Language}
+%%% As you replace the content, you may recompile/render your document, and see where
+%%% the data is being inserted.
+
+%%%---------------------------------
+%%% Specification name, acronym, and version
+%%% Ex: specname: Unified Modeling Language, specacro: UML, version: 2.5.2
+\setvalue{\specname}{\REPLACEME{Test Spec}}
+\setvalue{\specacro}{\REPLACEME{TS}}
+\setvalue{\version}{\REPLACEME{0.9}}
+
+%%%%% Cover page metadata
+%%% Subtitle is optional
+\setvalue{\subtitle}{\REPLACEME{Initial submission to TASKFORCE in Response to WHAT RFP (TASKFORCE/RFPDOCNUM}}
+
+%%% Submission date, use the OMG standard DD MONTHNAME, YYYY format
+\setvalue{\subdate}{\REPLACEME{Submission Date}}
+
+%%% Document number for this specification document, contact Jürgen Boldt at juergen@omg.org
+%%% to request any needed document numbers
+\setvalue{\docnum}{\REPLACEME{GET DOC NUM}}
+
+
+%%%---------------------------------
+%%%%% Authorship Information
+%%% Submitter and Copyright Information
+\setvalue{\leadsubmitter}{\REPLACEME{Lead Submitter, Company X}}
+\setvaluelist{\authornames}{{\REPLACEME{Company X}}, {\REPLACEME{Company Y}}}
+
+%%% Submitters names and company info
+%%% Follow this template for adding a specific company, person, and email:
+% {Company Name\\Contact Name\\contact@info.org}
+\setvaluelist{\submitterscontactinfo}{
+{\REPLACEME{Company X\\John Smith\\john@companyx.com}}, 
+{\REPLACEME{Company Y\\Dr. Jane Doe\\jdoe@companyy.com}}
+}
+
+%%% Inserted into the Author metadata of the resulting PDF
+\setvalue{\pdfauthor}{\REPLACEME{Object Management Group}}
+
+
+%%%---------------------------------
+%%% Document metadata
+%%%
+%%% IRIs are the identification URIs for referencing this specification, and will 
+%%% be placed in Section 0.1.3: Proposed Identification. 
+%%% Consult with Juergen Boldt (boldt@omg.org) for guidance.
+\setvaluelist{\iris}{{https://www.omg.org/spec/MOF2RDF/1.0}, {https://www.omg.org/spec/MOF2RDF/20181201}}
+
+%%% If you have other document IRIs to place on the cover page, set them here.
+%%% Consult with Juergen Boldt (boldt@omg.org) for guidance.
+\setvaluelist{\otherdocnums}{{https://www.omg.org/spec/MOF2RDF/1.0}, {https://www.omg.org/spec/MOF2RDF/20181201}}
+
+%%%---------------------------------
+%%% IPR Mode
+%%%
+%%% Setting this will perform two final functions for you:
+%%% 1) it properly insert the necessary IPR related boilerplate into your
+%%% submission document in Section 0.1.2. Just choose the mode, and it does the rest.
+%%% 2) it will remove the red italic instructions from throughout your document.
+%%% Uncomment the below \setvalue line and replace '\xspace' with one
+%%% of three values: rand, rflimited, or nonassert
+% \setvalue{\iprmode}{\xspace}
+
+
+
+
+%%%%%%%%%%%%%
+% Experimental below this point, ignore
+
+% \setvaluelist{\authors}{{A, Inc.},{B, Inc.},{C, LLC},{D}}
+\setvaluelist{\submitters}{}%{\REPLACEME{Company X2}}, {\REPLACEME{Company Y2}}}
+\setvaluelist{\contributors}{}%{\REPLACEME{Company A}}, {\REPLACEME{Company B}}}
+\setvaluelist{\supporters}{}%{\REPLACEME{Company 1, Inc.}}, {\REPLACEME{Company 2, LLC}}}
+
+
+% \setvaluelist{\authors}{
+%     {88solutions Corporation},
+%     {Adaptive, Inc.},
+%     {Model-Driven Solutions},
+%     {Thematix, LLC}
+% }
+
+% \setvaluelist{\submitters}{
+%     {
+%         {88solutions Corporation},%
+%         {%
+%             {{Mr. Manfred Koethe},{koethe@88solutions.com}}%
+%         }%
+%     },%
+%     {%
+%         {Adaptive, Inc.},%
+%         {
+%             {{Mr. Pete Rivett},{pete.rivett@adaptive.com}}%
+%         }
+%     },
+%     {
+%         {Model-Driven Solutions},
+%         {
+%             {{Mr. Tom Digre},{tom-d@modeldriven.com}},
+%             {{Mr. Cory Casanave},{cory-c@modeldriven.com}}
+%         }
+%     },
+%     {
+%         {Thematix, LLC},
+%         {
+%             {{Ms. Elisa Kendall},{ekendall@thematix.com}}
+%         }
+%     }
+% }
+
+% \setvaluelist{\submitters}{
+%     {
+%         company={88solutions Corporation},%
+%         contacts={%
+%             {contact={Mr. Manfred Koethe}, email={koethe@88solutions.com}}%
+%         }%
+%     },%
+%     {%
+%         company={Adaptive, Inc.},%
+%         contacts={
+%             {contact={Mr. Pete Rivett},email={pete.rivett@adaptive.com}}%
+%         }
+%     },
+%     {
+%         company={Model-Driven Solutions},
+%         contacts={
+%             {contact={Mr. Tom Digre},email={tom-d@modeldriven.com}},
+%             {contact={Mr. Cory Casanave},email={cory-c@modeldriven.com}}
+%         }
+%     },
+%     {
+%         company={Thematix, LLC},
+%         contacts={
+%             {contact={Ms. Elisa Kendall},email={ekendall@thematix.com}}
+%         }
+%     }
+% }
+% \setvaluelist{\submitters}{
+%     {
+%         {8},
+%         {
+%             {{MK},{k@}}
+%         }
+%     },
+%     {
+%         {A},
+%         {
+%             {{PR},{pr@}}
+%         }
+%     },
+%     {
+%         {M},
+%         {
+%             {{TD},{td@}},
+%             {{CC},{cc@}}
+%         }
+%     },
+%     {
+%         {T},
+%         {
+%             {{EK},{ek@}}
+%         }
+%     }
+% }
+% \setvaluelist{\supporters}{
+%     {
+%         {International Business Machines},
+%         {
+%             {{Mr. Sridhar Iyengar},{siyengar@us.ibm.com}}
+%         }
+%     }
+% }
+
