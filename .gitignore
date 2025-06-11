@@ -13,3 +13,5 @@ main.*
 *.run.xml
 *.toc
 svg_inkscape
+.vscode/
+.DS_Store
