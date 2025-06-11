@@ -1,0 +1,3 @@
+[submodule "mdsa-omg-core"]
+	path = mdsa-omg-core
+	url = https://github.com/jasonmccsmith/mdsa-omg-core
