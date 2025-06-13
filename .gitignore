@@ -15,3 +15,4 @@ main.*
 svg_inkscape
 .vscode/
 .DS_Store
+build/
