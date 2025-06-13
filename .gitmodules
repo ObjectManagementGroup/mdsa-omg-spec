@@ -1,3 +1,6 @@
 [submodule "mdsa-omg-core"]
 	path = mdsa-omg-core
 	url = https://github.com/jasonmccsmith/mdsa-omg-core.git
+[submodule "mdsa-tools"]
+	path = mdsa-tools
+	url = https://github.com/ObjectManagementGroup/mdsa-tools.git
