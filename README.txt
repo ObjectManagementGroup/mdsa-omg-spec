@@ -63,6 +63,8 @@ The remaining files are for you to edit:
 
     Note that there *is no section 3 Bibliography*.  LaTeX creates a bibliography for you, automatically, based on what sources you cite from the .bib files, and ensures it is formatted according to OMG requirements.
 
+    Note also that if you are converting an already published specification to this system, then there is no reason (other than historical preservation) to fill in the 0 Section files. The 0 Section is only for Submissions being considered for first issuance and publication, and Section 0 is stripped out prior to 1.0 (or 2.0, etc) being released. Leave them untouched, empty them, or remove them, and set \initialsubmission to false in Submission_Setup.tex. 
+
     - submission.bib is your personal bibliography file, add your non-OMG, non-ISO, non-W3 references here.  For help with creating .bib entries, you can refer to any number of online resources, but we recommend starting with the biblatex documentation at: https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX .
 
     - In addition, you are free to create new files at this level for inclusion, if you would like.  You would include them in your document using \subimport{}{MyFile}

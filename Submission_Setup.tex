@@ -26,7 +26,7 @@
 \setvalue{\version}{\REPLACEME{0.9}}
 
 %%%%% Cover page metadata
-%%% Subtitle is optional
+%%% Subtitle is optional - leave empty if you wish to have none
 \setvalue{\subtitle}{\REPLACEME{Initial submission to TASKFORCE in Response to WHAT RFP (TASKFORCE/RFPDOCNUM)}}
 
 %%% Submission date, use the OMG standard DD MONTHNAME, YYYY format
@@ -35,6 +35,11 @@
 %%% Document number for this specification document, contact Jürgen Boldt at juergen@omg.org
 %%% to request any needed document numbers
 \setvalue{\docnum}{\REPLACEME{GET DOC NUM}}
+
+%%% If this is an initial submission and requires Section 0, leave uncommented the line setting this to true.
+%%% Otherwise, comment the true line, uncomment the line setting this to false, and Section 0 will be elided from the document.
+\setboolean{initialsubmission}{true}
+% \setboolean{initialsubmission}{false}
 
 
 %%%---------------------------------
