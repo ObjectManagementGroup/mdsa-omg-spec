@@ -1,0 +1,1 @@
+Place manually created images in SVG format in this directory.
