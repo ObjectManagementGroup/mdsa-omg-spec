@@ -4,9 +4,9 @@ The OMG's Model Driven Specification Authoring process is a new technique for au
 This is the first eat our own dog food run of a new template, using LaTeX, git, and other tools.  There are many parts to this, but the vast majority of the LaTeX has been provided to, and hidden from, the authors.  The intent is that the authors can concentrate on the content, not the formatting or structure.
 
 - mdsa-omg-core/
-The core of the LaTeX definitions and mechanics are found in the mdsa-omg-core directory, which is provided as a git submodule from a stand-alone repository.  None of these files are intended to be edited.  These drive the entire LaTeX process, do *not* attempt to replace or edit these files, unless you are 110% sure of what you are doing.  (And, if you do edit because you need something, let OMG Editing know so they can discuss incorporating it into the main branch.)  If you need to add LaTeX packages, new commands, etc, place them into Submission_AuthorSettings.tex at the top level.  That's your sandbox to do with what you please.  Again, these files are read-only, and only described here as a warning for the curious.  Periodically you may be notified of an update to these files by OMG Staff.  If you are working in the Overleaf environment, select each updated file in the file browser, and click "Refresh" to get the newest version.  If you are working from a git clone, fetch changes to your local repository using `git submodule update` within the mdsa-omg-core directory.
+The core of the LaTeX definitions and mechanics are found in the mdsa-omg-core directory, which is provided as a git submodule from a stand-alone repository.  None of these files are intended to be edited.  These drive the entire LaTeX process, do *not* attempt to replace or edit these files, unless you are 110% sure of what you are doing.  (And, if you do edit because you need something, let OMG Editing know so they can discuss incorporating it into the main branch.)  If you need to add LaTeX packages, new commands, etc, place them into Specification_AuthorSettings.tex at the top level.  That's your sandbox to do with what you please.  Again, these files are read-only, and only described here as a warning for the curious.  Periodically you may be notified of an update to these files by OMG Staff.  If you are working in the Overleaf environment, select each updated file in the file browser, and click "Refresh" to get the newest version.  If you are working from a git clone, fetch changes to your local repository using `git submodule update` within the mdsa-omg-core directory.
 
-    Submission.tex              The main LaTeX file.  This is what is designated as the 'top' file.
+    Specification.tex              The main LaTeX file.  This is what is designated as the 'top' file.
                                 It exists solely to give tools a 'real' file to latch onto, and it
                                 then passes control to the next file on this list.  While this file
                                 is editable, it will do little good to do so, the entire document
@@ -14,13 +14,13 @@ The core of the LaTeX definitions and mechanics are found in the mdsa-omg-core d
 
     --- When using Overleaf.com, the files below this line are read-only ---
 
-    Submission_Template.tex     The main core template document. All formatting and structure is controlled
+    Specification_Template.tex     The main core template document. All formatting and structure is controlled
                                 starting with this file.
 
     Style (.sty) files are LaTeX command bundles.
     omg.sty                     omg.sty provides the basics used across all OMG documents.
     omg_rfp.sty                 omg_rfp.sty is for creating an RFP.
-    omg_submission.sty          omg_submission.sty is for creating a submission in response to an RFP.
+    omg_specification.sty          omg_specification.sty is for creating a submission in response to an RFP.
 
     .bib files are bibliography databases.  These are provided for your convenience.  You can refer to any of these entries via \cite{<entrycode>} and it will build your bibliography for you according to OMG requirements.
     iso.bib         ISO standards
@@ -35,7 +35,7 @@ Files that are generated from your models are placed into the GeneratedContent f
 
 The remaining files are for you to edit:
 
-    - Submission_Setup.tex is for putting in the basics of your Submission document: full specification name, specification acronym, important dates, document number, IPR mode, etc. Take some time to inspect this file, these macros form much of the backbone of the document you're producing. If you are unsure what in the document a setting controls, edit the content and look for changes in the rendered document. Generally speaking, the text in red italics is what is being controlled by the settings in this file.
+    - Specification_Setup.tex is for putting in the basics of your Submission document: full specification name, specification acronym, important dates, document number, IPR mode, etc. Take some time to inspect this file, these macros form much of the backbone of the document you're producing. If you are unsure what in the document a setting controls, edit the content and look for changes in the rendered document. Generally speaking, the text in red italics is what is being controlled by the settings in this file.
 
     - Subsmission_UserPreamble.tex is for customizing your LaTeX system to your needs.  Most users should not have to, but if you find yourself wanting to dive into OMGCore/, make your edits here instead.  Some common useful things have already been added here for you, such as turning on/off DRAFT watermarking, setting a new folder for model generated content instead of the default GeneratedContent/, etc.  This is your place to control LaTeX.
 
@@ -63,9 +63,9 @@ The remaining files are for you to edit:
 
     Note that there *is no section 3 Bibliography*.  LaTeX creates a bibliography for you, automatically, based on what sources you cite from the .bib files, and ensures it is formatted according to OMG requirements.
 
-    Note also that if you are converting an already published specification to this system, then there is no reason (other than historical preservation) to fill in the 0 Section files. The 0 Section is only for Submissions being considered for first issuance and publication, and Section 0 is stripped out prior to 1.0 (or 2.0, etc) being released. Leave them untouched, empty them, or remove them, and set \initialsubmission to false in Submission_Setup.tex. 
+    Note also that if you are converting an already published specification to this system, then there is no reason (other than historical preservation) to fill in the 0 Section files. The 0 Section is only for Submissions being considered for first issuance and publication, and Section 0 is stripped out prior to 1.0 (or 2.0, etc) being released. Leave them untouched, empty them, or remove them, and set \initialsubmission to false in Specification_Setup.tex. 
 
-    - submission.bib is your personal bibliography file, add your non-OMG, non-ISO, non-W3 references here.  For help with creating .bib entries, you can refer to any number of online resources, but we recommend starting with the biblatex documentation at: https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX .
+    - specification.bib is your personal bibliography file, add your non-OMG, non-ISO, non-W3 references here.  For help with creating .bib entries, you can refer to any number of online resources, but we recommend starting with the biblatex documentation at: https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX .
 
     - In addition, you are free to create new files at this level for inclusion, if you would like.  You would include them in your document using \subimport{}{MyFile}
 
