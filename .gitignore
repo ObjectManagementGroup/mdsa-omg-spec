@@ -1,3 +1,4 @@
+# LaTeX output
 *_files/
 main.*
 .main.*
@@ -13,6 +14,12 @@ main.*
 *.run.xml
 *.toc
 svg_inkscape
+
+# Visual Studio Code
 .vscode/
+
+# macOS Finder detritus
 .DS_Store
+
+# Local build space
 build/
