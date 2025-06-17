@@ -1,10 +1,10 @@
-This specification is being written using a different technique, which has three main parts: Document creation, collaboration, and model generated content.
+The OMG's Model Driven Specification Authoring process is a new technique for authoring OMG specifications, which has three main parts: Document creation, collaboration, and model generated content.
 
 1) LaTeX Document Generation
-This is the first eat our own dog food run of a new template, using LaTeX and the Overleaf online editing system.  There are many parts to this, but the vast majority of the LaTeX has been provided to, and hidden from, the authors.  The intent is that the authors can concentrate on the content, not the formatting or structure.
+This is the first eat our own dog food run of a new template, using LaTeX, git, and other tools.  There are many parts to this, but the vast majority of the LaTeX has been provided to, and hidden from, the authors.  The intent is that the authors can concentrate on the content, not the formatting or structure.
 
-- OMGCore/
-The core of the LaTeX definitions and mechanics are found in the OMGCore folder.  None of these files are intended to be edited.  These drive the entire LaTeX process, do *not* attempt to replace or edit these files, unless you are 110% sure of what you are doing.  (And, if you do edit because you need something, let us know so we can discuss incorporating it into the main branch.)  If you need to add LaTeX packages, new commands, etc, place them into Submission_AuthorSettings.tex at the top level.  That's your sandbox to do with what you please.  Again, these files are read-only, and only described here as a warning for the curious.  Periodically you may be notified of an update to these files by OMG Staff.  If you are working in the Overleaf environment, select each updated file in the file browser, and click "Refresh" to get the newest version.  If you are working from a git clone, fetch changes to your local repository.
+- mdsa-omg-core/
+The core of the LaTeX definitions and mechanics are found in the mdsa-omg-core directory, which is provided as a git submodule from a stand-alone repository.  None of these files are intended to be edited.  These drive the entire LaTeX process, do *not* attempt to replace or edit these files, unless you are 110% sure of what you are doing.  (And, if you do edit because you need something, let OMG Editing know so they can discuss incorporating it into the main branch.)  If you need to add LaTeX packages, new commands, etc, place them into Submission_AuthorSettings.tex at the top level.  That's your sandbox to do with what you please.  Again, these files are read-only, and only described here as a warning for the curious.  Periodically you may be notified of an update to these files by OMG Staff.  If you are working in the Overleaf environment, select each updated file in the file browser, and click "Refresh" to get the newest version.  If you are working from a git clone, fetch changes to your local repository using `git submodule update` within the mdsa-omg-core directory.
 
     Submission.tex              The main LaTeX file.  This is what is designated as the 'top' file.
                                 It exists solely to give tools a 'real' file to latch onto, and it
@@ -27,8 +27,11 @@ The core of the LaTeX definitions and mechanics are found in the OMGCore folder.
     omg.bib         OMG standards
     w3.bib          W3 standards
 
+- mdsa-tools/
+A bundle of custom tools to drive this process, this is another read-only directory provided as a git submodule. There is little need to dive into these if you are only authoring a specification, but if you are curious, the tools are documented and capable of quite a lot. There is also an ongoing project to expand the tool support here, which we invite all tool vendors and users to contribute to if they have a need.
+
 - GeneratedContent/
-Files that are generated from your models are placed into the GeneratedContent folder, as described  below under Model Driven Specification. You should never have to (or indeed, should not ever) edit these files manually.  Edit the model, regenerate these files.  Again, this is a warning to the curious.
+Files that are generated from your models are placed into the GeneratedContent folder, as described below under Model Driven Specification. You should never have to (or indeed, should not ever) edit these files manually.  Edit the model, regenerate these files.  Again, this is a warning to the curious.
 
 The remaining files are for you to edit:
 
