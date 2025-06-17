@@ -26,10 +26,10 @@ spec: gen
 	pandoc -f markdown --defaults omgLaTeX.yaml -o @0 $< 
 
 gen:
-	@if [ -f "modelgen.ini" ]; then \
-		./mdsa-tools/omgmdsa/md2LaTeX.py --config modelgen.ini; \
+	@if [ -f "${specacro}.config" ]; then \
+		./mdsa-tools/omgmdsa/md2LaTeX.py --config "${specacro}.config"; \
 	else \
-		echo "[MDSA] No modelgen.ini file, not building from model"; \
+		echo "[MDSA] No "${specacro}.config" file, not building from model"; \
 	fi
 
 clean:
