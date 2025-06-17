@@ -9,7 +9,9 @@ Assuming that you're reading this on the github site, here is your list of steps
 1. Click the "Use this template" green button top right of the repository landing page. Enter in the name of the repository you'd like to create. It is suggested you use the acronym for the specification (no explicit version number needed in most cases).
 
 2. Clone your new repository to your local machine, with one extra flag:
-`git clone --recurse-submodules https://github.com/acmecorp/ABCD.git`
+```
+git clone --recurse-submodules https://github.com/acmecorp/ABCD.git
+```
 
 3. Change directory in your local machine shell to your cloned repository and execute `make`.
 
@@ -119,10 +121,13 @@ In those cases, you can always add new files to this top level directory, and in
 If you are generating content from a model by way of a modeling tool, then files that are generated from your models are saved into the `GeneratedContent/` folder, as described below under Model Driven Specification. You should never have to (or indeed, should not ever) edit these files manually.  Edit the model, regenerate these files.  Again, this is a warning to the curious. You may think to add this directory to your .gitignore because your team plans on a disciplined use of the model as the authoritative source of truth at all times, as it can help prevent accidental manual edits. We advise against this, instead check in the generated content (.tex and .svg files), this will greatly facilitate the creation of changebar documents on demand later.
 
 
-### `mdsa-omg-core/` Submodule
+### Submodules
+There are two git submodules in this repository. If you have not used submodules before, they are effectively independent repositories that are pulled in on demand based on dependencies. This allows OMG staff to update the formatting and boilerplate as needed, and all specification authoring teams can pull updates to imporove their documents, without interfering with their technical content version control. You can find a good primer on submodules at: https://git-scm.com/book/en/v2/Git-Tools-Submodules 
+
+#### `mdsa-omg-core/` Submodule
 The core of the LaTeX definitions and mechanics are found in the mdsa-omg-core directory, which is provided as a git submodule from a stand-alone repository. This repository should be considered read-only. There is nothing in here that should need editing except under extremely rare circumstances. If you find yourself in those circumstances, contact OMG editorial staff (editor@omg.org) for guidance. It may be that you have uncovered a need for updating the core template, and your effort will help all OMG authors.
 
-### `mdsa-tools/` Submodule
+#### `mdsa-tools/` Submodule
 A bundle of custom tools to drive this process, this is another read-only directory provided as a git submodule. There is little need to dive into these if you are only authoring a specification, but if you are curious, the tools are documented and capable of quite a lot. There is also an ongoing project to expand the tool support here, which we invite all tool vendors and users to contribute to if they have a need. Contact editor@omg.org for details and information on how you can assist the community.
 
 
