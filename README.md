@@ -2,6 +2,8 @@
 The OMG's Model Driven Specification Authoring process is a new technique for creating OMG specifications. There are three main parts: Document creation, collaboration, and model generated content. The latter two are optional, but strongly suggested.
 
 ## tl;dr
+ -- _*DO NOT CLONE THIS REPOSITORY*_ --
+
 "Patience, yeah, yeah, how long is that going to take?"
 
 Assuming that you're reading this on the github site, here is your list of steps to specification authoring.
