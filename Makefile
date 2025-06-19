@@ -72,7 +72,7 @@ ${build}/%.tex: ./%.md
 	@target=$$0 ; \
 	size=$(shell du -ks $< | cut -f1) ; \
 	if (( $${size} > 0 )); then \
-		pandoc $< -f markdown -t latex -o $@ ; \
+		pandoc $< -f markdown --defaults ./omgLaTeX.yaml -t latex -o $@ ; \
 	else \
 		touch $@ ; \
 	fi
