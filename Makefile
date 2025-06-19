@@ -24,10 +24,11 @@ pdfname := ${specacro}_${version}.pdf
 
 .PHONY: spec gen clean core local md
 
-# Default target: build the document
+# Default target: build the document. Once for the base, second time for cross-references and ToC. Bibtex and a third time for bibliography creation.
 spec: ${build} ${build}/GeneratedContent core local md
 	@echo --- Creating PDF
-	cd build && pdflatex ./Specification.tex
+	cd build && pdflatex ./Specification.tex 2>&1 > /dev/null
+	cd build && pdflatex ./Specification.tex 2>&1 > /dev/null
 	mv build/Specification.pdf "./${pdfname}"
 
 # Only generate from the model if there is an appropriate ${specacro}.config file. I.e. UML.config or BPMN.config.
