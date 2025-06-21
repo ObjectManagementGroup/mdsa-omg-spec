@@ -19,7 +19,7 @@ git clone --recurse-submodules https://github.com/acmecorp/ABCD.git
 
 Congratulations, you've just created a valid OMG specification PDF named NOTSET_NOTSET.pdf.  (I said it is valid, not useful. That's up to you.) As you fill in the needed information to flesh out the metadata for your new specification, the document will fill in the info where needed, when needed. Right now it is a shell submission, suitable for responding to an RFP.
 
-Your next step will be to edit `Specification_Setup.tex` to provide the needed metadata and make this document start to look like an actual specification.
+Your next step will be to edit `_Specification_Setup.tex` to provide the needed metadata and make this document start to look like an actual specification.
 
 ## 1. Document Creation
 This is the first eat our own dog food run of a new template, using LaTeX, git, and other tools.  There are many parts to this, but the vast majority of the LaTeX has been provided to, and hidden from, the authors.  The intent is that the authors can concentrate on the content, not the formatting or structure. We'll start with the content you need to create, and then give some background on the read-only submodules. See the submodules' READMEs for further details if you're curious, or want to assist with the MDSA project.
@@ -49,7 +49,7 @@ If you open this NOTSET_NOTSET.PDF, you will notice that much of the body is red
 The first thing to do is set up your metadata.
 
 ### Setting up your specification
-The first task towards a working specification is to edit the `Specification_Setup.tex` file. This file contains the metadata for your specificaiton that will be used to fill in much of the red text you see in the freshly built PDF. Most of this should be self-explanatory even if you are not familiar with LaTeX, and is fully documented within that file. Lines beginning with `%` are comments, and most of this file is simply setting values to be used in the build process. As an example, the first three items you will need to edit are:
+The first task towards a working specification is to edit the `_Specification_Setup.tex` file. This file contains the metadata for your specificaiton that will be used to fill in much of the red text you see in the freshly built PDF. Most of this should be self-explanatory even if you are not familiar with LaTeX, and is fully documented within that file. Lines beginning with `%` are comments, and most of this file is simply setting values to be used in the build process. As an example, the first three items you will need to edit are:
 
 ``` LaTeX
 \setvalue{\specname}{\REPLACEME{Test Spec}}
@@ -69,10 +69,10 @@ Rebuild your PDF with `make`, and you'll see that your PDF is now named ABCD_1.2
 
 The remainder of this file is self-documented, but as always if any questions arise contact editor@omg.org. Once you have completed filling out this file, you will notice that the amount of red text in your PDF is considerably less.
 
-NOTE: A future goal of the MDSA project is to have this `Specification_Setup.tex` file be unnecessary or generated from metadata stored in OMG's document database. For now, manual input is required.
+NOTE: A future goal of the MDSA project is to have this `_Specification_Setup.tex` file be unnecessary or generated from metadata stored in OMG's document database. For now, manual input is required.
 
 ### Customizing your LaTeX environment
-If you are a LaTeX power user, `Specification_AuthorSettings.tex` is for customizing your LaTeX system to your needs.  Most users should not have to, but if you find yourself wanting to dive into `mdsa_omg_core/`, make your edits here instead if you can.  Some common useful things have already been added here for you, such as turning on/off DRAFT watermarking, setting a new folder for model generated content instead of the default `GeneratedContent/`, etc.  This is your place to customize LaTeX... if you dare.
+If you are a LaTeX power user, `_Specification_AuthorSettings.tex` is for customizing your LaTeX system to your needs.  Most users should not have to, but if you find yourself wanting to dive into `mdsa_omg_core/`, make your edits here instead if you can.  Some common useful things have already been added here for you, such as turning on/off DRAFT watermarking, setting a new folder for model generated content instead of the default `GeneratedContent/`, etc.  This is your place to customize LaTeX... if you dare.
 
 ### Authoring the Technical Content
 All other files in the top level folder are for you to add content to.  These are broken into the required sections of the OMG Specification Template.  The preceding number tells you what section the file belongs in.  
@@ -80,7 +80,7 @@ All other files in the top level folder are for you to add content to.  These ar
 If you do not need to fill out a particular section, such as 5_Symbols.tex, you may leave a file blank by deleting the contents, or remove it entirely. The corresponding section is either filled with boilerplate text (for required sections), or simply removed from the document (for optional sections).  All subsequent sections will be renumbered automatically to compensate.
 
 #### Section 0 (Submissions only)
-Section 0 content is only required for the initial Submission in response to an RFP. Removing these files, however, will result in boilerplate being inserted as if it were an initial Submission. To eliminate Section 0 entirely (regardless of the content of the files), set the boolean `initialsubmission` in `Specification_Setup.tex` to false. This will ensure that any other modifications needed for moving from a Submission to a Specification are performed, while allowing a continuity of commit history from initial submission by a Submission Team to sunsetting of a specification years later.
+Section 0 content is only required for the initial Submission in response to an RFP. Removing these files, however, will result in boilerplate being inserted as if it were an initial Submission. To eliminate Section 0 entirely (regardless of the content of the files), set the boolean `initialsubmission` in `_Specification_Setup.tex` to false. This will ensure that any other modifications needed for moving from a Submission to a Specification are performed, while allowing a continuity of commit history from initial submission by a Submission Team to sunsetting of a specification years later.
 
 - `0_Acknowledgements`: Any nice things you'd like to say about people who helped.
 - `0_Additional`: Any additional things you'd like to put into Section 0 go here.  Long discussions regarding comparison to other specs, for instance.
