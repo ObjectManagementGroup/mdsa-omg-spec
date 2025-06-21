@@ -18,8 +18,8 @@
 
 build := build
 
-specacro := $(shell ./mdsa-tools/omgmdsa/specsetup.py --lookup specacro --setupFile Specification_Setup.tex)
-version  := $(shell ./mdsa-tools/omgmdsa/specsetup.py --lookup version --setupFile Specification_Setup.tex)
+specacro := $(shell ./mdsa-tools/omgmdsa/specsetup.py --lookup specacro --setupFile _Specification_Setup.tex)
+version  := $(shell ./mdsa-tools/omgmdsa/specsetup.py --lookup version --setupFile _Specification_Setup.tex)
 pdfname := ${specacro}_${version}.pdf
 
 .PHONY: spec gen clean core local md
