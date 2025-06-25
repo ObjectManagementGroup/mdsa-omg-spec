@@ -25,6 +25,27 @@ Congratulations, you've just created a valid OMG specification PDF named NOTSET_
 
 Your next step will be to edit `_Specification_Setup.tex` to provide the needed metadata and make this document start to look like an actual specification.
 
+## 0. Requirements
+There are a few requirements before you can begin creating your OMG specification.
+
+### Git
+Before you can begin, you obviously need to have git installed to clone your freshly created repository, and collaborate with your colleagues. There are numerous command line and GUI packages available, this README assumes command line use, but any tool that supports git submodules can be used effectively.
+
+### LaTeX
+This is a LaTeX driven tool. If you are going to be producing the PDF locally, you will need a LaTeX distrbution to do so. The simplest approach is to download and install the appropriate TeXLive bundle for your system: https://tug.org/texlive/
+
+This is not the smallest or nimblest approach (it is several GB), but it takes care of installing more or less everything you could possibly want in a LaTeX system, particularly if you are just getting going. If you have an existing LaTeX installation, it should be sufficient.
+
+### An editor
+One of the benefits of using LaTeX is that any text editor will do. You can use anything from vi to a full dedicated professional LaTeX typesetting editor, the choice is yours. 
+
+### Python
+The build system uses several Python scripts to perform the mundane tasks behind the scenes. You will need a Python 3.x installation, but anything relatively recent will do.
+
+### Make
+Make is traditionally a Unix tool, and is included by default with most any *nix OS or *nix-esque support system, such as MSYS, WSL, MinGW, and others. Linux and macOS are natively supported.
+
+
 ## 1. Document Creation
 This is the first eat our own dog food run of a new template, using LaTeX, git, and other tools.  There are many parts to this, but the vast majority of the LaTeX has been provided to, and hidden from, the authors.  The intent is that the authors can concentrate on the content, not the formatting or structure. We'll start with the content you need to create, and then give some background on the read-only submodules. See the submodules' READMEs for further details if you're curious, or want to assist with the MDSA project.
 
