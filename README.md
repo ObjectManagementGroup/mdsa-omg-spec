@@ -15,7 +15,11 @@ Assuming that you're reading this on the github site, here is your list of steps
 git clone --recurse-submodules https://github.com/acmecorp/ABCD.git
 ```
 
-3. Change directory in your local machine shell to your cloned repository and execute `make`.
+3. Change directory in your local machine shell to your cloned repository.
+   
+4. Execute `cd mdsa-tools; python setup.py install; cd ..` to install the needed tools.
+   
+5. Execute `make`.
 
 Congratulations, you've just created a valid OMG specification PDF named NOTSET_NOTSET.pdf.  (I said it is valid, not useful. That's up to you.) As you fill in the needed information to flesh out the metadata for your new specification, the document will fill in the info where needed, when needed. Right now it is a shell submission, suitable for responding to an RFP.
 
@@ -124,10 +128,13 @@ If you are generating content from a model by way of a modeling tool, then files
 
 
 ### Submodules
-There are two git submodules in this repository. If you have not used submodules before, they are effectively independent repositories that are pulled in on demand based on dependencies. This allows OMG staff to update the formatting and boilerplate as needed, and all specification authoring teams can pull updates to imporove their documents, without interfering with their technical content version control. You can find a good primer on submodules at: https://git-scm.com/book/en/v2/Git-Tools-Submodules 
+There are two git submodules in this repository. If you have not used submodules before, they are effectively independent repositories that are pulled in on demand based on dependencies. This allows OMG staff to update the formatting and boilerplate as needed, and all specification authoring teams can pull updates to imporove their documents, without interfering with their technical content version control. It also keeps the official repositories for this material under OMG staff control, so there's no risk of your causing upstream errors. You can find a good primer on submodules at: https://git-scm.com/book/en/v2/Git-Tools-Submodules . The one command you will need to know is 'git submodule update --remote` which will perform the needed pull/fetch/merge actions. Execute this in the top level of your repository, and it will update the below submodules as needed.
+
+##### Why submodules?
+Why not just provide static code packages or use a dependency tool such as Maven for this? We expect that authors will have unique situations that require stepping in and working directly with the plumbing in some cases. Since the submodules are clones, any changes that need to be perfomed can be submitted as pull requests against the official repository, and if deemed a globally-needed fix or enhancement, can be accepted into the official repository and made available to everyone. We're not just collaborating on specifications, we're collaborating on the community tools.
 
 #### `mdsa-omg-core/` Submodule
-The core of the LaTeX definitions and mechanics are found in the mdsa-omg-core directory, which is provided as a git submodule from a stand-alone repository. This repository should be considered read-only. There is nothing in here that should need editing except under extremely rare circumstances. If you find yourself in those circumstances, contact OMG editorial staff (editor@omg.org) for guidance. It may be that you have uncovered a need for updating the core template, and your effort will help all OMG authors.
+The core of the LaTeX definitions and mechanics are found in the mdsa-omg-core directory, which is provided as a git submodule from a stand-alone repository. This repository should be considered read-only. There is nothing in here that should need editing except under extremely rare circumstances. If you find yourself in those circumstances, contact OMG editorial staff (editor@omg.org) for guidance. It may be that you have uncovered a need for updating the core template, and your effort will help all OMG authors. As a warning, however, this is the control center for the structure and formatting of your document. It is sequestered away to not only alleviate you from having to manage it, but also so that it is more difficult to create errors. A typo here can cause widespread havoc to your document's formatting, or prevent the production of your PDF altogether.
 
 #### `mdsa-tools/` Submodule
 A bundle of custom tools to drive this process, this is another read-only directory provided as a git submodule. There is little need to dive into these if you are only authoring a specification, but if you are curious, the tools are documented and capable of quite a lot. There is also an ongoing project to expand the tool support here, which we invite all tool vendors and users to contribute to if they have a need. Contact editor@omg.org for details and information on how you can assist the community.
