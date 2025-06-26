@@ -21,15 +21,10 @@ gencondir := GeneratedContent
 
 specacro := $(shell ./mdsa-tools/omgmdsa/specsetup.py --lookup specacro --setupFile _Specification_Setup.tex)
 version  := $(shell ./mdsa-tools/omgmdsa/specsetup.py --lookup version --setupFile _Specification_Setup.tex)
-pdfname := ${specacro}_${version}.pdf
+pdfnamebase := ${specacro}_${version}
 
-# Default target: build the document. Once for the base, second time for cross-references and ToC. Bibtex and a third time for bibliography creation.
-spec: ${build} ${gencondir} core local md
-	@echo --- Creating PDF
-	cd build && pdflatex ./Specification.tex 2>&1 > /dev/null
-	cd build && pdflatex ./Specification.tex 2>&1 > /dev/null
-	mv build/Specification.pdf "./${pdfname}"
+all: spec
 
-.PHONY: spec 
+.PHONY: all 
 
 include ./mdsa-omg-core/_core.mk

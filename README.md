@@ -17,7 +17,7 @@ git clone --recurse-submodules https://github.com/acmecorp/ABCD.git
 
 3. Change directory in your local machine shell to your cloned repository.
    
-4. Execute `cd mdsa-tools; python setup.py install; cd ..` to install the needed tools.
+4. Execute `cd mdsa-tools; pip install -e .; cd ..` to install the needed tools as a one time action.
    
 5. Execute `make`.
 
