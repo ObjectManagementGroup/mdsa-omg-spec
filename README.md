@@ -15,11 +15,7 @@ Assuming that you're reading this on the github site, here is your list of steps
 git clone --recurse-submodules https://github.com/acmecorp/ABCD.git
 ```
 
-3. Change directory in your local machine shell to your cloned repository.
-   
-4. Execute `cd mdsa-tools; pip install -e .; cd ..` to install the needed tools as a one time action.
-   
-5. Execute `make`.
+3. Execute `make`.
 
 Congratulations, you've just created a valid OMG specification PDF named NOTSET_NOTSET.pdf.  (I said it is valid, not useful. That's up to you.) As you fill in the needed information to flesh out the metadata for your new specification, the document will fill in the info where needed, when needed. Right now it is a shell submission, suitable for responding to an RFP.
 
@@ -57,15 +53,20 @@ LaTeX is a massively complex system, and the OMG styles and templates are design
 
 Typing `make` is all that is needed to kick off the process, whether you are generating LaTeX from a model, or have hand edited the files.
 
-A `build/` directory will be created if has not already, and all required files from `mdsa_omg_core`, `GeneratedFiles/`, and `Images/` will be copied to that directory for processing. `pdflatex` is then executed within that directory to create the PDF, which is then copied back to the top level and renamed according to your specification metadata: ACRONYM_VERSION.pdf
+- The required tools in `mdsa-tools` will be automatically installed using `pip` if need be.
 
-That's it. `build/` can be deleted at any time, or, in the case of curiousity or debugging, you can dive into it to track down problems or questions.
+- A `build/` directory will be created if has not already, and all required files from `mdsa_omg_core`, `GeneratedFiles/`, and `Images/` will be copied to that directory for processing. 
+
+- `pdflatex` is then executed within that directory to create the PDF, which is then copied back to the top level and renamed according to your specification metadata: ACRONYM_VERSION.pdf
+
+That's it. `build/` can be deleted at any time using `make clean`, or, in the case of curiousity or debugging, you can dive into it to track down problems or questions.
 
 The Make targets include:
 
-- `spec`: the default target. Copies necessary files to `build/` and creates the PDF.
+- `spec`: The default target. Copies necessary files to `build/` and creates the PDF.
 - `gen`: Re-generates content from a modeling tool into `GeneratedContent/`. Performed if needed as part of `spec`.
-- `clean`: Deletes `build/` and the resulting PDF. At this time it leavew `GeneratedContent/` alone.
+- `clean`: Deletes `build/` and the resulting PDF. At this time it leaves `GeneratedContent/` alone.
+- `debug`: Runs `spec` but shows all output from `latexmk` to allow for debugging of any issues during the build.
 
 When you first run `make` in a fresh repository you will get a valid shell of an OMG specification document. All formatting, boilerplate, etc, is prepared for you. (Not only should you not have to worry about these things, you cannot alter these things without significant work. Any necessary changes should be coordinated with OMG editorial staff at editor@omg.org.)
 
@@ -90,7 +91,7 @@ If your specification is named "Abstract Bundles of Coding Definitions", has the
 \setvalue{\version}{1.2}
 ```
 
-Rebuild your PDF with `make`, and you'll see that your PDF is now named ABCD_1.2.pdf. Open it, and you'll see that the data you provided has been used to fill in every place within the docuemnt that it is needed.
+Rebuild your PDF with `make`, and you'll see that your PDF is now named `ABCD_1.2.pdf`. Open it, and you'll see that the data you provided has been used to fill in every place within the docuemnt that it is needed.
 
 The remainder of this file is self-documented, but as always if any questions arise contact editor@omg.org. Once you have completed filling out this file, you will notice that the amount of red text in your PDF is considerably less.
 
