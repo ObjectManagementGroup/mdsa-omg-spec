@@ -101,37 +101,37 @@ NOTE: A future goal of the MDSA project is to have this `_Specification_Setup.te
 If you are a LaTeX power user, `_Specification_AuthorSettings.tex` is for customizing your LaTeX system to your needs.  Most users should not have to, but if you find yourself wanting to dive into `mdsa_omg_core/`, make your edits here instead if you can.  Some common useful things have already been added here for you, such as turning on/off DRAFT watermarking, setting a new folder for model generated content instead of the default `GeneratedContent/`, etc.  This is your place to customize LaTeX... if you dare.
 
 ### Authoring the Technical Content
-All other files in the top level folder are for you to add content to.  These are broken into the required sections of the OMG Specification Template.  The preceding number tells you what section the file belongs in.  
+All other files in the top level folder are for you to add content to.  These are broken into the required sections of the OMG Specification Template.  The preceding two-digit number tells you what section the file belongs in; the two digits keep the files in section order, also for specifications with ten or more sections.  
 
-If you do not need to fill out a particular section, such as 5_Symbols.tex, you may leave a file blank by deleting the contents, or remove it entirely. The corresponding section is either filled with boilerplate text (for required sections), or simply removed from the document (for optional sections).  All subsequent sections will be renumbered automatically to compensate.
+If you do not need to fill out a particular section, such as 05_Symbols.tex, you may leave a file blank by deleting the contents, or remove it entirely. The corresponding section is either filled with boilerplate text (for required sections), or simply removed from the document (for optional sections).  All subsequent sections will be renumbered automatically to compensate.
 
 #### Section 0 (Submissions only)
 Section 0 content is only required for the initial Submission in response to an RFP. Removing these files, however, will result in boilerplate being inserted as if it were an initial Submission. To eliminate Section 0 entirely (regardless of the content of the files), set the boolean `initialsubmission` in `_Specification_Setup.tex` to false. This will ensure that any other modifications needed for moving from a Submission to a Specification are performed, while allowing a continuity of commit history from initial submission by a Submission Team to sunsetting of a specification years later.
 
-- `0_Acknowledgements`: Any nice things you'd like to say about people who helped.
-- `0_Additional`: Any additional things you'd like to put into Section 0 go here.  Long discussions regarding comparison to other specs, for instance.
-- `0_Changes_To_Existing`: Are there any required or proposed changes to other OMG specs?
-- `0_Introduction`: Give a brief introduction to your specification.  Remember, this will *not* be a part of the final formal specification, this is for OMG members only.
-- `0_Issues`: Issues to be Discussed as required by the RFP.  Discuss them here.
-- `0_Proof_Of_Concept`: Discuss a proof of concept, if you have one.
-- `0_Relation_To_Existing`: Are there any specifications within the OMG (or elsewhere) that this submission relates to?
-- `0_Resolutions_Mandatory`: List and discuss how you satisfied the mandatory requirements.
-- `0_Resolutions_Optional`: list and discuss how you satisfied the optional requirements.
-- `0_Submitters`: list the submitters to this spec, including contact info.
+- `00_Acknowledgements`: Any nice things you'd like to say about people who helped.
+- `00_Additional`: Any additional things you'd like to put into Section 0 go here.  Long discussions regarding comparison to other specs, for instance.
+- `00_Changes_To_Existing`: Are there any required or proposed changes to other OMG specs?
+- `00_Introduction`: Give a brief introduction to your specification.  Remember, this will *not* be a part of the final formal specification, this is for OMG members only.
+- `00_Issues`: Issues to be Discussed as required by the RFP.  Discuss them here.
+- `00_Proof_Of_Concept`: Discuss a proof of concept, if you have one.
+- `00_Relation_To_Existing`: Are there any specifications within the OMG (or elsewhere) that this submission relates to?
+- `00_Resolutions_Mandatory`: List and discuss how you satisfied the mandatory requirements.
+- `00_Resolutions_Optional`: list and discuss how you satisfied the optional requirements.
+- `00_Submitters`: list the submitters to this spec, including contact info.
 
 #### Technical Content
 Finally, this is the meat of the specification, and where you will make the bulk of your edits.
 
 Each remaining file is self-documented, and contains instructions on how it should be filled according to OMG best practices, and the advice of the Architecture Board. If at any time you have questions about the technical content, please contact your Technical Director (bennett@omg.org), and/or your friendly AB member.
 
-- `1_Scope`             Section 1, Scope of specification.
-- `2_Basic_Conformance` Section 2, What constitutes basic conformance with this specification?
-- `2_Extended_Conformance`  Section 2, Are there any extended conformance items?
-- `2_Profile_Conformance`   Section 2, How are profiles against this spec deemed to be conformant?
-- `4_Terms`             Section 4, Define any terms needed to understand this specification.
-- `5_Symbols`           Section 5, Define any special symbols or glyphs used in this document.
-- `6_Additional`        Section 6, Often a 'how to read this' and acknowledgements, but it is up to the authors.
-- `7+_Technical_Content`    Sections 7 onward, this is the technical description of the specification.
+- `01_Scope`             Section 1, Scope of specification.
+- `02_Basic_Conformance` Section 2, What constitutes basic conformance with this specification?
+- `02_Extended_Conformance`  Section 2, Are there any extended conformance items?
+- `02_Profile_Conformance`   Section 2, How are profiles against this spec deemed to be conformant?
+- `04_Terms`             Section 4, Define any terms needed to understand this specification.
+- `05_Symbols`           Section 5, Define any special symbols or glyphs used in this document.
+- `06_Additional`        Section 6, Often a 'how to read this' and acknowledgements, but it is up to the authors.
+- `07_Technical_Content` Section 7, the first section of the technical description of the specification. Rename it after your first technical section (e.g. `07_Core_Packages`) and add one file per further section: `08_Semantics`, `09_...`, and so on. All files from `07_` to `99_` are included automatically, in the order of their names. If you need a different order, list them in a file `07+_Technical_Content.tex` instead, one `\subimport{}{07_Core_Packages}` line each.
 - `A_Annexes`           Annexes A onward, fill this in if you have supplementary annexes.
 
 #### Bibliography
@@ -150,7 +150,7 @@ By default, citations are NON-normative. To make a citation normative, add its b
 #### Additional Files
 While this template structure is designed to handle most use cases possible, there is always that one team that breaks things and... I mean innovates. They innovate.
 
-In those cases, you can always add new files to this top level directory, and include them in your document with a single LaTeX command: `\subimport{}{MyFile}` would include the contents of `MyFile.tex`. Note the lack of file suffix in the command. This is most commonly used to gather files into `7+_Technical_Content.tex` and `A_Annexes.tex` but can be used for any purpose (as long as it doesn't break the OMG template, boilerplate, or other required elements!)
+In those cases, you can always add new files to this top level directory, and include them in your document with a single LaTeX command: `\subimport{}{MyFile}` would include the contents of `MyFile.tex`. Note the lack of file suffix in the command. This is most commonly used to gather files into a technical section such as `07_Technical_Content.tex`, and into `A_Annexes.tex`, but can be used for any purpose (as long as it doesn't break the OMG template, boilerplate, or other required elements!)
 
 ### Model Generated Content Support
 If you are generating content from a model by way of a modeling tool, then files that are generated from your models are saved into the `GeneratedContent/` folder, as described below under Model Driven Specification. You should never have to (or indeed, should not ever) edit these files manually.  Edit the model, regenerate these files.  Again, this is a warning to the curious. You may think to add this directory to your .gitignore because your team plans on a disciplined use of the model as the authoritative source of truth at all times, as it can help prevent accidental manual edits. We advise against this, instead check in the generated content (.tex and .svg files), this will greatly facilitate the creation of changebar documents on demand later.

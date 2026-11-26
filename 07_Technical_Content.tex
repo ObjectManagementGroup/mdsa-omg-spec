@@ -1,0 +1,21 @@
+\color{red}
+{ \itshape Technical content starts at Clause 7. Write each clause as a separate file, named after its two-digit clause number and its title, such as 07\_Core\_Packages.tex, 08\_Semantics.tex, and so on; rename this file accordingly. All files from 07\_ to 99\_ are included automatically, in the order of their names. Markdown files (.md) with the same naming work the same way. Within a clause file, create your section, subsection, etc structures and use the \lstinline!\subimport{}! command to read in additional files, particularly those from the GeneratedContent folder, which can be reached via the \lstinline!\genfiles! macro.
+
+Example, 07\_Core\_Packages.tex:
+\begin{lstlisting}
+\chapter{Core Packages}
+\section{Base}
+\subimport{\genfiles}{Base}
+\section{Syntax}
+\subimport{\genfiles}{Syntax}
+\section{Semantics}
+\subimport{\genfiles}{Semantics}
+\section{Units}
+\subimport{\genfiles}{Units}
+\section{SimpleUnits (informative)}\label{simpleunits}
+\subimport{\genfiles}{SimpleUnits}
+\end{lstlisting}
+
+If you need a different order than the file names give, list your clause files in a file 07+\_Technical\_Content.tex instead, one \lstinline!\subimport{}{07_Core_Packages}! line per clause.
+}
+\color{black}
